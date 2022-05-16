@@ -2283,7 +2283,7 @@ window.onload = function() {
 
 
 
-    const length  = firstImageData.data.length;
+    const length  = firstImageData.length;
     const memory = _malloc(length); // Allocating WASM memory
     HEAPU8.set(firstImageData, memory); // Copying JS image data to WASM memory
     _grayScale(memory, length); // Calling WASM method
@@ -2292,6 +2292,8 @@ window.onload = function() {
     return filteredImageData;
 
 };
+
+
 
 
 
