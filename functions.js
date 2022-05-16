@@ -2283,11 +2283,11 @@ window.onload = function() {
 
 
     const length  = firstImageData.data.length;
-    const memory = Module._malloc(length); // Allocating WASM memory
-    Module.HEAPU8.set(firstImageData, memory); // Copying JS image data to WASM memory
-    Module._grayScale(memory, length); // Calling WASM method
+    const memory = _malloc(length); // Allocating WASM memory
+    HEAPU8.set(firstImageData, memory); // Copying JS image data to WASM memory
+    grayScale(memory, length); // Calling WASM method
     const filteredImageData = HEAPU8.subarray(memory, memory + length); // Converting WASM data to JS Image data
-    Module._free(memory); // Freeing WASM memory
+    _free(memory); // Freeing WASM memory
     return filteredImageData;
 
 };
