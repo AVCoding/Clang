@@ -2275,7 +2275,7 @@ window.onload = function() {
 
   
 
-    console.log( canvas.getImageData(0, 0, img.width, img.height) );
+    console.log( ctx.getImageData(0, 0, img.width, img.height) );
 };
 
 // const length  = imageData.data.length;
