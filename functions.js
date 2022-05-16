@@ -2284,13 +2284,33 @@ window.onload = function() {
 
 
 
-    const length  = firstImageData.data.length;
-    const memory = Module._malloc(length); // Allocating WASM memory
-    HEAPU8.set(firstImageData.data, memory); // Copying JS image data to WASM memory
-    _grayScale(memory, length); // Calling WASM method
-    const filteredImageData = HEAPU8.subarray(memory, memory + length); // Converting WASM data to JS Image data
-    _free(memory); // Freeing WASM memory
-    return filteredImageData;
+    
+  window.onload = function() {
+      var canvas = document.getElementById("myCanvas");
+      var ctx = canvas.getContext("2d");
+      var img = document.getElementById("scream");
+      ctx.drawImage(img, 10, 10);
+
+
+      var firstImageData = ctx.getImageData( 0,0,  200, 200);
+
+      var secondCanv  = document.getElementById("SecondCanvas");
+      var ctxSecond = canvas.getContext("2d");
+      ctxSecond.putImageData(firstImageData,55,55);
+
+
+
+      const length  = firstImageData.data.length;
+      const memory = Module._malloc(firstImageData); // Allocating WASM memory
+      HEAPU8.set(firstImageData, memory); // Copying JS image data to WASM memory
+      _grayScale(memory.data, length); // Calling WASM method
+      const filteredImageData = HEAPU8.subarray(memory, memory + length); // Converting WASM data to JS Image data
+      _free(memory); // Freeing WASM memory
+      return filteredImageData;
+
+  };
+
+
 
 };
 
