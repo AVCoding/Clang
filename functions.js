@@ -2265,6 +2265,8 @@ if (Module['preInit']) {
 run();
 
 
+
+
 window.onload = function() {
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
@@ -2272,7 +2274,7 @@ window.onload = function() {
     ctx.drawImage(img, 10, 10);
 
 
-    var firstImageData = canvas.getImageData(0, 0, img.width, img.height);
+    var firstImageData = canvas.getImageData(0, 0, canvas.width, canvas.height);
 
     var secondCanv  = document.getElementById("SecondCanvas");
     var ctxSecond = canvas.getContext("2d");
