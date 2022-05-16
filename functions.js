@@ -2269,7 +2269,6 @@ run();
 
 
 
-
 window.onload = function() {
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
@@ -2286,14 +2285,15 @@ window.onload = function() {
 
 
     const length  = firstImageData.data.length;
-    const memory = _malloc(firstImageData); // Allocating WASM memory
+    const memory = _malloc(firstImageData.data); // Allocating WASM memory
     HEAPU8.set(firstImageData, memory); // Copying JS image data to WASM memory
-    _grayScale(memory.data, length); // Calling WASM method
+    _grayScale(memory, length); // Calling WASM method
     const filteredImageData = HEAPU8.subarray(memory, memory + length); // Converting WASM data to JS Image data
     _free(memory); // Freeing WASM memory
     return filteredImageData;
 
 };
+
 
 
 
