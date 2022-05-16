@@ -2277,7 +2277,7 @@ window.onload = function() {
 
     var secondCanv  = document.getElementById("SecondCanvas");
     var ctxSecond = canvas.getContext("2d");
-    ctxSecond.putImageData(firstImageData,0,0);
+    ctxSecond.putImageData(firstImageData,55,55);
 
 };
 
