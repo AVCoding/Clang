@@ -2265,7 +2265,6 @@ if (Module['preInit']) {
 run();
 
 
-
 window.onload = function() {
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
@@ -2273,12 +2272,14 @@ window.onload = function() {
     ctx.drawImage(img, 10, 10);
 
 
-    var firstImageData = ctx.getImageData(0, 0, img.width, img.height);
+    var firstImageData = canvas.getImageData(0, 0, img.width, img.height);
 
     var secondCanv  = document.getElementById("SecondCanvas");
-    secondCanv.putImageData(firstImageData,0,0);
+    var ctxSecond = canvas.getContext("2d");
+    ctxSecond.putImageData(firstImageData,0,0);
 
 };
+
 
 // const length  = imageData.data.length;
 // const memory = Module._malloc(length); // Allocating WASM memory
