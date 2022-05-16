@@ -2307,12 +2307,9 @@ window.onload = function() {
       const filteredImageData = HEAPU8.subarray(memory, memory + length); // Converting WASM data to JS Image data
       _free(memory); // Freeing WASM memory
       return filteredImageData;
-
-  };
-
-
-
 };
+
+
 
 
 
