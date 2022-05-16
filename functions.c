@@ -14,7 +14,7 @@
 EMSCRIPTEN_KEEPALIVE
 void grayScale(unsigned char* data, int len) {
    for (int i = 0; i < len; i += 1) {
-       data[i] = 8;
+       data[i] = 1;
    }
 }
 
