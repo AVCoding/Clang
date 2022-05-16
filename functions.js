@@ -2273,9 +2273,11 @@ window.onload = function() {
     ctx.drawImage(img, 10, 10);
 
 
-  
+    var firstImageData = canvas.getImageData(0, 0, img.width, img.height);
 
-    console.log( ctx.getImageData(0, 0, img.width, img.height) );
+    var secondCanv  = document.getElementById("SecondCanvas");
+    secondCanv.putImageData(firstImageData,0,0);
+
 };
 
 // const length  = imageData.data.length;
