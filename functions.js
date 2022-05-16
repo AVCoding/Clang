@@ -2269,22 +2269,7 @@ run();
 
 
 
-window.onload = function() {
-    var canvas = document.getElementById("myCanvas");
-    var ctx = canvas.getContext("2d");
-    var img = document.getElementById("scream");
-    ctx.drawImage(img, 10, 10);
 
-
-    var firstImageData = ctx.getImageData( 0,0,  200, 200);
-
-    var secondCanv  = document.getElementById("SecondCanvas");
-    var ctxSecond = canvas.getContext("2d");
-    ctxSecond.putImageData(firstImageData,55,55);
-
-
-
-    
   window.onload = function() {
       var canvas = document.getElementById("myCanvas");
       var ctx = canvas.getContext("2d");
