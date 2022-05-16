@@ -2273,7 +2273,7 @@ window.onload = function() {
     ctx.drawImage(img, 10, 10);
 
 
-    var firstImageData = ctx.getImageData( 0,0,  100, 100);
+    var firstImageData = ctx.getImageData( 0,0,  200, 200);
 
     var secondCanv  = document.getElementById("SecondCanvas");
     var ctxSecond = canvas.getContext("2d");
